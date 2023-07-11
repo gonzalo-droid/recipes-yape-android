@@ -1,0 +1,184 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'org.jlleitschuh.gradle.ktlint'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.example.recipes_yape_android'
+    compileSdk 33
+    flavorDimensions 'versionFlavor'
+
+
+    defaultConfig {
+        applicationId "com.example.recipes_yape_android"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
+    }
+
+    productFlavors {
+        dev {
+            dimension 'versionFlavor'
+            buildConfigField 'boolean', 'IS_SHOW_LOG', 'true'
+            buildConfigField 'boolean', 'DEBUG', 'true'
+            buildConfigField 'String', 'BASE_URL', '"https://www.sandbox.api.ulearning.com.pe/api/"'
+        }
+
+        prod {
+            dimension 'versionFlavor'
+            buildConfigField 'boolean', 'IS_SHOW_LOG', 'false'
+            buildConfigField 'boolean', 'DEBUG', 'false'
+            buildConfigField 'String', 'BASE_URL', '"https://api.ulearning.com.pe/api/"'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    viewBinding {
+        enabled = true
+    }
+    dataBinding {
+        enabled = true
+    }
+
+    ktlint {
+        debug.set(true)
+        disabledRules.set(["no-wildcard-imports"])
+    }
+}
+
+dependencies {
+
+    implementation common.splash
+    implementation common.androidCore
+    implementation common.appCompat
+    implementation common.material
+    implementation common.constraintLyout
+    implementation common.legacySupport
+
+    implementation common.livedata
+    implementation common.viewmodel
+    implementation common.runtime
+
+    implementation common.coroutinesCore
+    implementation common.coroutinesAndroid
+
+    implementation common.recyclerview
+    implementation common.recyclerviewSelection
+
+    // Retrofit
+    implementation retrofit.retrofit
+    implementation retrofit.retrofitgson
+    implementation retrofit.gson
+    implementation retrofit.okhttpInterceptor
+    implementation 'com.localebro:okhttpprofiler:1.0.8'
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    kapt 'com.github.bumptech.glide:compiler:4.15.1'
+
+    // https://medium.com/geekculture/shimmer-effect-in-android-2b6840cc0097
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+
+    //HILT
+    implementation daggerHilt.hilt
+    implementation 'androidx.preference:preference:1.2.0'
+    kapt daggerHilt.compiler
+    annotationProcessor daggerHilt.annotationProcessor
+
+    //MAPS
+    implementation maps.maps
+
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'androidx.annotation:annotation:1.6.0'
+
+
+    implementation 'com.google.android.material:material:1.9.0'
+
+
+    //kotlin coroutines test
+    /**
+     * kotlinx-coroutines-test: Esta biblioteca se utiliza para probar las funciones asincrónicas
+     * que se implementan con Kotlin Coroutines en Android. Por ejemplo, si tienes una función
+     * que usa Coroutines para hacer una llamada a la red y deseas probarla,
+     * puedes usar kotlinx-coroutines-test para escribir pruebas para esa función. Ejemplo:*/
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4'
+
+    /**
+     * Hamcrest: Hamcrest es una biblioteca de aserciones para pruebas unitarias en Java y Kotlin.
+     * Puedes usar Hamcrest para escribir aserciones más expresivas en tus pruebas unitarias*/
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+
+    /**
+     * androidx.arch.core:core-testing: Esta biblioteca se utiliza para probar los componentes
+     * de Arquitectura de Android, como LiveData y ViewModel. Con esta biblioteca, puedes simular
+     * cambios de datos y observar cómo los componentes de Arquitectura reaccionan a esos cambios*/
+    testImplementation 'androidx.arch.core:core-testing:2.2.0'
+
+    /**
+     * com.squareup.okhttp3:mockwebserver: Esta biblioteca se utiliza para simular respuestas de
+     * red en pruebas unitarias de Android. Por ejemplo, si tienes una función que hace una llamada
+     * a una API, puedes usar mockwebserver para simular la respuesta de esa API en tus pruebas unitarias*/
+    testImplementation 'com.squareup.okhttp3:mockwebserver:4.9.3'
+
+    /**
+     * io.mockk:mockk: Esta biblioteca se utiliza para crear objetos simulados en pruebas unitarias
+     * de Kotlin. Puedes usar mockk para simular objetos que dependen de otros objetos o
+     * para simular interacciones de usuario en tus pruebas unitarias.*/
+    testImplementation "io.mockk:mockk:1.12.5"
+
+    /**
+     * org.mockito:mockito-core: Esta biblioteca se utiliza para crear objetos simulados en
+     * pruebas unitarias de Java y Kotlin. Puedes usar Mockito para simular objetos que dependen
+     * de otros objetos o para simular interacciones de usuario en tus pruebas unitari*/
+    testImplementation 'org.mockito:mockito-core:4.2.0'
+
+    /**
+     * This is a library that provides Kotlin extensions and functions to use JUnit 4 or JUnit 5
+     * in Android tests. The version being used in this project is 1.1.5.*/
+    testImplementation "androidx.test.ext:junit-ktx:1.1.5"
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+
+
+    /**
+     * This is a library that provides Kotlin extensions and functions for
+     * testing Android components and interactions with the Android framework.
+     * The version being used in this project is 1.5.0.*/
+    testImplementation "androidx.test:core-ktx:1.5.0"
+
+    /**
+     * This is a library that allows running Android unit tests on the JVM without the need
+     * for an emulator or device. It provides a simulated Android environment for tests.*/
+    testImplementation "org.robolectric:robolectric:4.7.3"
+
+
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
