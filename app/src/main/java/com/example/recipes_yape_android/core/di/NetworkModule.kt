@@ -1,13 +1,21 @@
 package com.example.recipes_yape_android.core.di
 
+import android.content.Context
 import com.example.recipes_yape_android.BuildConfig
 import com.example.recipes_yape_android.core.utils.SupportInterceptor
+import com.example.recipes_yape_android.data.remote.api.RecipeApi
+import com.example.recipes_yape_android.data.remote.network.ConnectionUtils
+import com.example.recipes_yape_android.data.remote.network.ConnectionUtilsImpl
+import com.example.recipes_yape_android.data.remote.network.NetworkHandler
+import com.example.recipes_yape_android.data.remote.services.RecipeService
+import com.example.recipes_yape_android.data.remote.services.RecipeServiceImpl
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
 import com.localebro.okhttpprofiler.OkHttpProfilerInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -62,4 +70,21 @@ object NetworkModule {
         return client.build()
     }
 
+    @Provides
+    @Singleton
+    fun provideConnection(@ApplicationContext appContext: Context): ConnectionUtils =
+        ConnectionUtilsImpl(appContext)
+
+    @Provides
+    @Singleton
+    fun provideRecipeApi(
+        retrofit: Retrofit,
+    ): RecipeApi = retrofit.create(RecipeApi::class.java)
+
+    @Provides
+    @Singleton
+    fun provideRecipeService(
+        recipeApi: RecipeApi,
+        networkHandler: NetworkHandler
+    ): RecipeService = RecipeServiceImpl(recipeApi, networkHandler)
 }

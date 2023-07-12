@@ -61,9 +61,7 @@ buildscript {
 
         ]
 
-        maps = [
-                maps: "com.google.android.gms:play-services-maps:$versions.maps",
-        ]
+        maps = [maps: "com.google.android.gms:play-services-maps:$versions.maps",]
 
         navigation = [
                 //NAVIGATION
@@ -86,10 +84,8 @@ buildscript {
                 gson             : "com.google.code.gson:gson:$versions.gson",
                 okhttpInterceptor: "com.squareup.okhttp3:logging-interceptor:$versions.okhttpInterceptor",]
 
-        others = [
-                  glide  : "com.github.bumptech.glide:glide:$versions.glide",
-                  pinview: "io.github.chaosleung:pinview:$versions.pinview"
-        ]
+        others = [glide  : "com.github.bumptech.glide:glide:$versions.glide",
+                  pinview: "io.github.chaosleung:pinview:$versions.pinview"]
         agp_version = '8.0.0'
 
     }
@@ -98,10 +94,8 @@ buildscript {
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation")
         classpath "com.google.dagger:hilt-android-gradle-plugin:$versions.hilt"
         classpath "org.jlleitschuh.gradle:ktlint-gradle:10.3.0"
-        classpath "com.android.tools.build:gradle:8.0.0"
-        classpath 'com.google.gms:google-services:4.3.13'
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.1'
-        classpath 'com.google.firebase:firebase-appdistribution-gradle:3.0.3'
+        classpath "com.android.tools.build:gradle:8.0.2"
+        classpath 'com.google.gms:google-services:4.3.15'
     }
 
 }
