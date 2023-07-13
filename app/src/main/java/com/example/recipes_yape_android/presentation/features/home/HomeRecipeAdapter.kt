@@ -42,7 +42,7 @@ class HomeRecipeAdapter constructor(
                 ImageLoaderGlide().loadImage(
                     imageView = binding.imageIv,
                     imagePath = it,
-                    requestOptions = RequestOptions.bitmapTransform(RoundedCorners(16)),
+                    requestOptions = RequestOptions.bitmapTransform(RoundedCorners(20)),
                     placeHolder = R.drawable.food_loading
                 )
             }

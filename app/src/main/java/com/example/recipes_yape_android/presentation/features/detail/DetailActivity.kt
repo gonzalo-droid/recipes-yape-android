@@ -12,7 +12,7 @@ import com.example.recipes_yape_android.core.extensions.observe
 import com.example.recipes_yape_android.core.functional.Failure
 import com.example.recipes_yape_android.data.remote.entity.Recipe
 import com.example.recipes_yape_android.databinding.ActivityDetailBinding
-import com.example.recipes_yape_android.presentation.features.map.MapActivity
+import com.example.recipes_yape_android.presentation.features.maps.MapsActivity
 import com.example.recipes_yape_android.presentation.utils.BindingUtil
 import com.example.recipes_yape_android.presentation.utils.ConfigUtil
 import com.example.recipes_yape_android.presentation.utils.imageLoader.ImageLoaderGlide
@@ -94,7 +94,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun goToMap(model: Recipe) {
-        startActivity(Intent(this, MapActivity::class.java).apply {
+        startActivity(Intent(this, MapsActivity::class.java).apply {
             putExtra(ConfigUtil.RECIPE_PUT, model)
         })
     }
