@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
+    id 'com.google.dagger.hilt.android'
     id 'org.jlleitschuh.gradle.ktlint'
 }
 
@@ -39,14 +39,14 @@ android {
             dimension 'versionFlavor'
             buildConfigField 'boolean', 'IS_SHOW_LOG', 'true'
             buildConfigField 'boolean', 'DEBUG', 'true'
-            buildConfigField 'String', 'BASE_URL', '"https://www.sandbox.api.ulearning.com.pe/api/"'
+            buildConfigField 'String', 'BASE_URL', '"https://demo1784653.mockable.io/"'
         }
 
         prod {
             dimension 'versionFlavor'
             buildConfigField 'boolean', 'IS_SHOW_LOG', 'false'
             buildConfigField 'boolean', 'DEBUG', 'false'
-            buildConfigField 'String', 'BASE_URL', '"https://api.ulearning.com.pe/api/"'
+            buildConfigField 'String', 'BASE_URL', '"https://demo1784653.mockable.io/"'
         }
     }
 
@@ -110,10 +110,8 @@ dependencies {
 
 
     //HILT
-    implementation daggerHilt.hilt
-    implementation 'androidx.preference:preference:1.2.0'
-    kapt daggerHilt.compiler
-    annotationProcessor daggerHilt.annotationProcessor
+    implementation "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-compiler:2.44"
 
     //MAPS
     implementation maps.maps
@@ -179,4 +177,9 @@ dependencies {
 
 
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes true
 }

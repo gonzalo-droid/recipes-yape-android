@@ -93,8 +93,8 @@ buildscript {
     dependencies {
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation")
         classpath "com.google.dagger:hilt-android-gradle-plugin:$versions.hilt"
-        classpath "org.jlleitschuh.gradle:ktlint-gradle:10.3.0"
-        classpath "com.android.tools.build:gradle:8.0.2"
+        classpath "org.jlleitschuh.gradle:ktlint-gradle:11.3.2"
+        classpath 'com.android.tools.build:gradle:7.2.2'
         classpath 'com.google.gms:google-services:4.3.15'
     }
 
@@ -106,6 +106,7 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.8.20' apply false
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin' version '2.0.0' apply false
     id 'org.jetbrains.kotlin.jvm' version '1.6.20' apply false
+    id 'com.google.dagger.hilt.android' version '2.44' apply false
 }
 
 task clean(type: Delete) {

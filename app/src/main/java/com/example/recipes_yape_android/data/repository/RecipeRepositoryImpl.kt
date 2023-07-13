@@ -12,7 +12,7 @@ class RecipeRepositoryImpl
 @Inject constructor(
     private val service: RecipeService,
 ) : RecipeRepository {
-    override suspend fun getRecipes(userId: Int): Either<Failure, ArrayList<Recipe>> {
+    override suspend fun getRecipes(): Either<Failure, ArrayList<Recipe>> {
         return when (val response = service.recipes()) {
             is Either.Right -> {
                 Either.Right(response.b)

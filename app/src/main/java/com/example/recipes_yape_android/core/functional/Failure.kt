@@ -6,16 +6,11 @@ sealed class Failure {
 
     open class DefaultError(val idMessage: Int) : Failure()
 
-    /** Weird and strange error that we don´t know the cause.*/
-    object None : Failure()
-
     /** When suddenly the connection is lost.*/
     object NetworkConnectionLostSuddenly : Failure()
 
     /** When there is no internet network detected.*/
     object NoNetworkDetected : Failure()
-
-    object SSLError : Failure()
 
     /** When service is taking to long on return the response.*/
     object TimeOut : Failure()
@@ -26,6 +21,8 @@ sealed class Failure {
     /** Extend this class for feature specific SERVICE ERROR BODY RESPONSE.*/
     open class ServerBodyError(val code: Int, val message: String) : Failure()
 
-    /** Extend this class for feature specific DATA -> DOMAIN MAPPERS exceptions.*/
-    open class DataToDomainMapperFailure(val mapperException: String?) : Failure()
+    /** Weird and strange error that we don´t know the cause.*/
+    object None : Failure()
+
+
 }

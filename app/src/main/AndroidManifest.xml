@@ -14,8 +14,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Recipesyapeandroid"
-        tools:targetApi="31">
+        android:theme="@style/Theme.Recipesyapeandroid">
         <activity
             android:name=".presentation.features.map.MapActivity"
             android:exported="false" />
@@ -26,8 +25,10 @@
             android:name=".presentation.features.home.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".presentation.features.splash.SplashActivity"
-            android:exported="true">
+            android:name=".presentation.features.splash.CustomSplashScreenActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.App.Starting">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

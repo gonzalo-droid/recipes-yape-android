@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme.AppBarOverlay" parent="Theme.AppCompat.Light.NoActionBar" />
+
+    <style name="ExpandedAppBar">
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/readex_semibold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="CollapsedAppBar">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/readex_regular</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <style name="welcomeText">Te damos la Bienvenida</style>
+
+    <style name="readex_light">
+        <item name="fontFamily">@font/readex_light</item>
+        <item name="android:fontFamily">@font/readex_light</item>
+    </style>
+
+
+    <style name="readex_regular">
+        <item name="fontFamily">@font/readex_regular</item>
+        <item name="android:fontFamily">@font/readex_regular</item>
+    </style>
+
+    <style name="readex_semibold">
+        <item name="fontFamily">@font/readex_semibold</item>
+        <item name="android:fontFamily">@font/readex_semibold</item>
+    </style>
+
+    <style name="readex_medium">
+        <item name="fontFamily">@font/readex_medium</item>
+        <item name="android:fontFamily">@font/readex_medium</item>
+    </style>
+
+    <style name="readex_bold">
+        <item name="fontFamily">@font/readex_bold</item>
+        <item name="android:fontFamily">@font/readex_bold</item>
+    </style>
+
+    <style name="readex_11_semibold" parent="readex_semibold">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="readex_16_semibold" parent="readex_semibold">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="readex_18_semibold" parent="readex_semibold">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="readex_20_semibold" parent="readex_semibold">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="readex_10_regular" parent="readex_regular">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="readex_11_regular" parent="readex_regular">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="readex_12_regular" parent="readex_regular">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="readex_13_regular" parent="readex_regular">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="readex_14_regular" parent="readex_regular">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="readex_16_regular" parent="readex_regular">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+
+    <style name="readex_11_medium" parent="readex_medium">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="readex_12_medium" parent="readex_medium">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="readex_14_medium" parent="readex_medium">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="readex_16_medium" parent="readex_medium">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="readex_19_medium" parent="readex_medium">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+
+    <style name="readex_20_medium" parent="readex_medium">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="readex_14_bold" parent="readex_bold">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="readex_20_bold" parent="readex_bold">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="readex_24_bold" parent="readex_bold">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="readex_34_bold" parent="readex_bold">
+        <item name="android:textSize">34sp</item>
+    </style>
+
+
+    <style name="readex_20_regular" parent="readex_regular">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="readex_26_regular" parent="readex_regular">
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="readex_24_semibold">
+        <item name="fontFamily">@font/readex_semibold</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="readex_26_semibold">
+        <item name="fontFamily">@font/readex_semibold</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+
+    <style name="readex_27_semibold">
+        <item name="fontFamily">@font/readex_semibold</item>
+        <item name="android:textSize">27sp</item>
+    </style>
+
+    <style name="readex_11_light" parent="readex_light">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="readex_10_light" parent="readex_light">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="readex_12_light" parent="readex_light">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="readex_14_light" parent="readex_light">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="readex_20_light" parent="readex_light">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+</resources>

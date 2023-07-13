@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">recipes-yape-android</string>
+
+    <string name="error_user_message">Error, inténtelo nuevamente</string>
+
+    <string name="error_credentials">Credenciales incorrectas</string>
+
+    <string name="error_no_internet">Sin conexión a internet</string>
+    <string name="fail">fail</string>
+    <string name="success">success</string>
+    <string name="error_server">Error en el servidor</string>
 </resources>

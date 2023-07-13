@@ -7,7 +7,7 @@ import retrofit2.http.GET
 
 interface RecipeApi {
 
-    @GET("https://demo1784653.mockable.io/recipes")
+    @GET("recipes")
     suspend fun recipes(): Response<BaseResponse<ArrayList<Recipe>>>
 
 }

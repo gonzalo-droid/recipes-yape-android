@@ -7,7 +7,5 @@ import com.example.recipes_yape_android.data.remote.entity.Recipe
 
 interface RecipeRepository {
 
-    suspend fun getRecipes(
-        userId: Int,
-    ): Either<Failure, ArrayList<Recipe>>
+    suspend fun getRecipes(): Either<Failure, ArrayList<Recipe>>
 }
