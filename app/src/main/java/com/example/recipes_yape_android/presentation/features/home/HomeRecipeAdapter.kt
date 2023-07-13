@@ -13,7 +13,7 @@ import com.example.recipes_yape_android.presentation.utils.imageLoader.ImageLoad
 
 
 class HomeRecipeAdapter constructor(
-    private val recipes: List<Recipe> = arrayListOf(),
+    private var recipes: List<Recipe> = arrayListOf(),
     private val onClickListener: (Recipe) -> Unit,
 ) : RecyclerView.Adapter<HomeRecipeAdapter.CustomViewHolder>() {
 
@@ -25,6 +25,11 @@ class HomeRecipeAdapter constructor(
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         holder.bind(recipes[position], onClickListener)
+    }
+
+    fun updateData(recipes: List<Recipe>) {
+        this.recipes = recipes
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int = recipes.size

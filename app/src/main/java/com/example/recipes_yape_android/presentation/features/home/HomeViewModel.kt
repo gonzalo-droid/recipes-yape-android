@@ -18,6 +18,13 @@ class HomeViewModel @Inject constructor(
     private val _recipes: MutableLiveData<List<Recipe>> = MutableLiveData()
     val recipes: LiveData<List<Recipe>> = _recipes
 
+    private val _queryHintSearch = MutableLiveData<String>()
+    val queryHintSearch: LiveData<String> = _queryHintSearch
+
+    fun setQueryHintSearch(query: String) {
+        _queryHintSearch.value = query
+    }
+
     fun loadRecipes() = getRecipesUseCase(BaseUseCase.None(), viewModelScope) {
         it.either(
             ::handleFailure,

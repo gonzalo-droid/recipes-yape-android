@@ -3,7 +3,9 @@ package com.example.recipes_yape_android.presentation.features.home
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -24,6 +26,8 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
     private lateinit var viewModel: HomeViewModel
     private lateinit var recipeRecycler: RecyclerView
+    private var listRecipesFiler: List<Recipe> = arrayListOf()
+    private lateinit var adapter: HomeRecipeAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,14 +56,46 @@ class HomeActivity : AppCompatActivity() {
         }
 
         viewModel.loadRecipes()
+
+        binding.textSearch.addTextChangedListener {filter ->
+            viewModel.setQueryHintSearch(filter.toString())
+            var text = viewModel.queryHintSearch.value
+            validQuerySearch(text)
+        }
+
+        with(binding.txtInputLayout) {
+            setEndIconOnClickListener {
+                viewModel.setQueryHintSearch("")
+                binding.textSearch.text?.clear()
+                validQuerySearch(viewModel.queryHintSearch.value)
+            }
+        }
+    }
+
+    private fun validQuerySearch(text: String?) {
+        if (text?.isNotEmpty() == true) {
+            val filterList = listRecipesFiler.filter { recipe ->
+                recipe.name!!.lowercase().contains(text.toString().lowercase())
+            }
+            adapter.updateData(filterList)
+
+        } else {
+            viewModel.loadRecipes()
+        }
     }
 
     private fun renderRecipesList(recipes: List<Recipe>?) {
         hideProgress()
 
         binding.recipeRecycler.visibility = View.VISIBLE
-        recipeRecycler.adapter = HomeRecipeAdapter(recipes = recipes ?: listOf()) { model ->
+
+        adapter = HomeRecipeAdapter(recipes = recipes ?: listOf()) { model ->
             onItemSelected(model)
+        }
+        recipeRecycler.adapter = adapter
+
+        if (recipes != null) {
+            listRecipesFiler = recipes
         }
     }
 
