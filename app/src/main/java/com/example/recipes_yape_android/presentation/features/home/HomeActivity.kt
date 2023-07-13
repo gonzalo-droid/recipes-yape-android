@@ -1,10 +1,9 @@
 package com.example.recipes_yape_android.presentation.features.home
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.util.AttributeSet
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,7 +12,9 @@ import com.example.recipes_yape_android.core.extensions.observe
 import com.example.recipes_yape_android.core.functional.Failure
 import com.example.recipes_yape_android.data.remote.entity.Recipe
 import com.example.recipes_yape_android.databinding.ActivityHomeBinding
+import com.example.recipes_yape_android.presentation.features.detail.DetailActivity
 import com.example.recipes_yape_android.presentation.utils.BindingUtil
+import com.example.recipes_yape_android.presentation.utils.ConfigUtil
 import com.example.recipes_yape_android.presentation.utils.MessageDesign
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -63,7 +64,9 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun onItemSelected(model: Recipe) {
-
+        startActivity(Intent(this, DetailActivity::class.java).apply {
+            putExtra(ConfigUtil.RECIPE_PUT, model)
+        })
     }
 
     private fun handleFailure(failure: Failure?) {

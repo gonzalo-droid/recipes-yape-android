@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.example.recipes_yape_android.R
 import com.example.recipes_yape_android.data.remote.entity.Recipe
@@ -41,7 +42,7 @@ class HomeRecipeAdapter constructor(
                 ImageLoaderGlide().loadImage(
                     imageView = binding.imageIv,
                     imagePath = it,
-                    requestOptions = RequestOptions.centerCropTransform(),
+                    requestOptions = RequestOptions.bitmapTransform(RoundedCorners(16)),
                     placeHolder = R.drawable.food_loading
                 )
             }

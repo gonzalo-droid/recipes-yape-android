@@ -4,9 +4,33 @@
     <string name="error_user_message">Error, inténtelo nuevamente</string>
 
     <string name="error_credentials">Credenciales incorrectas</string>
+    <string name="error_show_data">Tuvimos problemas al mostrar la información</string>
 
     <string name="error_no_internet">Sin conexión a internet</string>
     <string name="fail">fail</string>
     <string name="success">success</string>
     <string name="error_server">Error en el servidor</string>
+
+    <string name="instructions_title">Instrucciones</string>
+    <string name="ingredients_title">Ingredientes</string>
+
+    <string name="instructions_lorem">Caliente aceite en una sartén grande y agrega la cebolla, el ajo y la zanahoria picada.
+            Mezcle bien las verduras e incorpore la carne de res o cerdo. Sazone con sal y pimienta al gusto. Deje cocer la carne, revolviendo entre 8­ a 10 minutos.
+            Agregue las aceitunas, el huevo cocido y el perejil picado. Reserve un poco de cada uno para adornar.
+            Para servir, puedes utilizar una taza o recipiente pequeño como molde. Cubra con un poco de aceite el molde y llénelo con arroz hasta la mitad. Coloca entre 2 a ­3 cucharadas del relleno de carne y cúbrelo con arroz. Presiona bien para que pueda desmoldarlo en el plato sin problemas.
+            Una vez que esté servido, ponga perejil y huevo picado sobre el arroz. Si deseas puedes acompañar el arroz tapado con alguna fritura como plátano o huevo.</string>
+
+
+    <string name="ingredients_lorem">
+        - 1/4 taza de aceite de oliva
+        - 1 cebolla grande, finamente picada
+        - 4 dientes de ajo, finamente picados
+        - 2 zanahorias picadas;Sal y pimienta al gusto
+        - 1 lb de carne molida o picada
+        - 1/2 lb de carne de cerdo picada
+        - 6 aceitunas negras sin semilla, cortadas en cuartos
+        - 3 huevos duros, picados
+        - 1/4 taza perejil, picado
+        - 2 lb de arroz blanco, cocido y preparado al gusto
+        - Aceite</string>
 </resources>

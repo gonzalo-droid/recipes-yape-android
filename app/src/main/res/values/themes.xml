@@ -18,6 +18,10 @@
 
     <style name="Theme.Recipesyapeandroid" parent="Base.Theme.Recipesyapeandroid" />
 
+    <style name="Theme.App.Transparent" parent="Base.Theme.Recipesyapeandroid">
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
     <style name="Theme.App.Starting" parent="Theme.SplashScreen.IconBackground">
         <item name="windowSplashScreenBackground">@color/white</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/logo_github</item>

@@ -20,7 +20,9 @@
             android:exported="false" />
         <activity
             android:name=".presentation.features.detail.DetailActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.App.Transparent" />
         <activity
             android:name=".presentation.features.home.HomeActivity"
             android:exported="false" />
