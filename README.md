@@ -32,7 +32,8 @@ Tambien utilice Material Design 3, Kotlin Coroutines, Hilt.
 
 ## Demo
 
-https://github.com/gonzalo-droid/recipes-yape-android/assets/35148569/608dd63a-e92f-4e44-8674-620764f4a695
+https://github.com/gonzalo-droid/recipes-yape-android/assets/35148569/5ca67e98-9ab5-4255-99c0-7fdce88e459d
+
 
 ### Estructura del proyecto
 
