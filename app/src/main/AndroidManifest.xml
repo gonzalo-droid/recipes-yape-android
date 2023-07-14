@@ -37,6 +37,7 @@
             android:theme="@style/Theme.App.Transparent" />
         <activity
             android:name="com.gonzalolozg.yape.presentation.features.home.HomeActivity"
+            android:screenOrientation="portrait"
             android:exported="false"/>
         <activity
             android:name="com.gonzalolozg.yape.presentation.features.splash.CustomSplashScreenActivity"
