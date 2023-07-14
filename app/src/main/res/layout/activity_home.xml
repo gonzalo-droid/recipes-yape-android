@@ -114,6 +114,19 @@
             app:layout_constraintStart_toStartOf="@+id/guideline27"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <include
+            android:id="@+id/noDataInclude"
+            layout="@layout/no_data_alert"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/txtInputLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/guideline28"
+            app:layout_constraintStart_toStartOf="@+id/guideline27"
+            app:title="@{@string/error_no_data}" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

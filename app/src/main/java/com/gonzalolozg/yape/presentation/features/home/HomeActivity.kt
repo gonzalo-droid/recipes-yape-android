@@ -9,7 +9,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gonzalolozg.yape.core.extensions.failure
+import com.gonzalolozg.yape.core.extensions.invisible
 import com.gonzalolozg.yape.core.extensions.observe
+import com.gonzalolozg.yape.core.extensions.visible
 import com.gonzalolozg.yape.core.functional.Failure
 import com.gonzalolozg.yape.data.remote.entity.Recipe
 import com.gonzalolozg.yape.databinding.ActivityHomeBinding
@@ -78,7 +80,14 @@ class HomeActivity : AppCompatActivity() {
             }
             adapter.updateData(filterList)
 
+            if(filterList.isEmpty()){
+                binding.noDataInclude.root.visible()
+            } else {
+                binding.noDataInclude.root.invisible()
+            }
+
         } else {
+            binding.noDataInclude.root.invisible()
             viewModel.loadRecipes()
         }
     }
