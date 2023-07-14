@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="title"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.94" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.06" />
+
+        <ImageView
+            android:id="@+id/iconInfo"
+            style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_search_off"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
+            app:layout_constraintStart_toStartOf="@+id/leftGuideLine"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.3" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/textView20"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="4"
+            android:text="@{title}"
+            android:textAppearance="@style/readex_16_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/rightGuideLine"
+            app:layout_constraintStart_toStartOf="@+id/leftGuideLine"
+
+            app:layout_constraintTop_toBottomOf="@+id/iconInfo"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Titulo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

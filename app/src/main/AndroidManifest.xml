@@ -11,7 +11,7 @@
 
 
     <application
-        android:name=".core.AndroidApplication"
+        android:name="com.gonzalolozg.yape.core.AndroidApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -27,19 +27,19 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".presentation.features.maps.MapsActivity"
+            android:name="com.gonzalolozg.yape.presentation.features.maps.MapsActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".presentation.features.detail.DetailActivity"
+            android:name="com.gonzalolozg.yape.presentation.features.detail.DetailActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.App.Transparent" />
         <activity
-            android:name=".presentation.features.home.HomeActivity"
+            android:name="com.gonzalolozg.yape.presentation.features.home.HomeActivity"
             android:exported="false"/>
         <activity
-            android:name=".presentation.features.splash.CustomSplashScreenActivity"
+            android:name="com.gonzalolozg.yape.presentation.features.splash.CustomSplashScreenActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.App.Starting">

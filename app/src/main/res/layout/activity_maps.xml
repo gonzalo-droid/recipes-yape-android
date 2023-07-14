@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.recipes_yape_android.presentation.features.maps.MapsViewModel" />
+            type="com.gonzalolozg.yape.presentation.features.maps.MapsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

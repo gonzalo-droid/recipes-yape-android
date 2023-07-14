@@ -7,7 +7,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.recipes_yape_android.presentation.features.detail.DetailViewModel" />
+            type="com.gonzalolozg.yape.presentation.features.detail.DetailViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

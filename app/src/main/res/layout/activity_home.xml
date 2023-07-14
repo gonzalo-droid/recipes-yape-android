@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.recipes_yape_android.presentation.features.home.HomeViewModel" />
+            type="com.gonzalolozg.yape.presentation.features.home.HomeViewModel" />
 
     </data>
 

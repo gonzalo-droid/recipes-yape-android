@@ -7,13 +7,13 @@ plugins {
 }
 
 android {
-    namespace 'com.example.recipes_yape_android'
+    namespace 'com.gonzalolozg.yape'
     compileSdk 33
     flavorDimensions 'versionFlavor'
 
 
     defaultConfig {
-        applicationId "com.example.recipes_yape_android"
+        applicationId "com.gonzalolozg.yape"
         minSdk 24
         targetSdk 33
         versionCode 1
