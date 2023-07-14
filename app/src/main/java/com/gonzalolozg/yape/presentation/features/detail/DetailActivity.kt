@@ -1,9 +1,9 @@
 package com.gonzalolozg.yape.presentation.features.detail
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.request.RequestOptions
 import com.gonzalolozg.yape.R
@@ -43,9 +43,7 @@ class DetailActivity : AppCompatActivity() {
         val upArrow = resources.getDrawable(R.drawable.ic_arrow_back)
         upArrow.setColorFilterV2(R.color.blue, Mode.SRC_ATOP)
 
-
         supportActionBar!!.setHomeAsUpIndicator(upArrow)
-
 
         viewModel = ViewModelProvider(this)[DetailViewModel::class.java]
 
@@ -61,7 +59,6 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun renderRecipes(recipe: Recipe?) {
-
         recipe?.let { model ->
             with(binding) {
                 toolbarLayout.title = " "
@@ -74,7 +71,7 @@ class DetailActivity : AppCompatActivity() {
                 model.ingredients?.let { item ->
                     val array = item.split(";")
                     array.forEach { element ->
-                        listIngredients += "- ${element} \n"
+                        listIngredients += "- $element \n"
                     }
                 }
 
@@ -88,8 +85,6 @@ class DetailActivity : AppCompatActivity() {
                         placeHolder = R.drawable.food_loading
                     )
                 }
-
-
             }
             binding.mapCard.setOnClickListener {
                 goToMap(model)
@@ -98,9 +93,11 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun goToMap(model: Recipe) {
-        startActivity(Intent(this, MapsActivity::class.java).apply {
-            putExtra(ConfigUtil.RECIPE_PUT, model)
-        })
+        startActivity(
+            Intent(this, MapsActivity::class.java).apply {
+                putExtra(ConfigUtil.RECIPE_PUT, model)
+            }
+        )
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -115,5 +112,4 @@ class DetailActivity : AppCompatActivity() {
     private fun handleFailure(failure: Failure?) {
         BindingUtil.showSnackBar(binding.root, getString(R.string.error_show_data))
     }
-
 }

@@ -28,7 +28,6 @@ class RecipeRepositoryImplTest {
 
     @Test
     fun `should return recipes when service call is successful`() {
-
         val mockRecipes = ArrayList<Recipe>()
         val successResponse = Either.Right(mockRecipes)
         coEvery { service.recipes() } returns successResponse
@@ -40,7 +39,6 @@ class RecipeRepositoryImplTest {
 
     @Test
     fun `should return failure when service call fails`() {
-
         val failureResponse = Either.Left(Failure.DefaultError("Error"))
         coEvery { service.recipes() } returns failureResponse
 
@@ -48,5 +46,4 @@ class RecipeRepositoryImplTest {
 
         assertEquals(failureResponse, result)
     }
-
 }

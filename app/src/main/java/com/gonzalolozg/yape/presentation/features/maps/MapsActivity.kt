@@ -58,16 +58,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         if (data != null) {
             viewModel.setData(data)
         }
-
     }
 
     private fun renderRecipe(recipe: Recipe?) {
-
         mMap?.let { it ->
             if (viewModel.getData() != null) {
                 binding.topBarInclude.title = recipe?.name
 
-                if(recipe?.latitude != null && recipe?.longitude != null){
+                if (recipe?.latitude != null && recipe?.longitude != null) {
                     val location = LatLng(recipe?.latitude!!.toDouble(), recipe.longitude.toDouble())
                     it.addMarker(MarkerOptions().position(location).title(recipe?.name))
                     it.moveCamera(CameraUpdateFactory.newLatLng(location))
@@ -79,7 +77,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 } else {
                     BindingUtil.showSnackBar(binding.root, getString(R.string.error_location))
                 }
-
             }
         }
     }
@@ -88,11 +85,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         if (ContextCompat.checkSelfPermission(
-                this, Manifest.permission.ACCESS_FINE_LOCATION
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
             ) == PackageManager.PERMISSION_GRANTED
         ) {
             mMap.isMyLocationEnabled = true
-
         } else {
             ActivityCompat.requestPermissions(
                 this,
@@ -105,13 +102,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,
-        grantResults: IntArray,
+        grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 if (ContextCompat.checkSelfPermission(
-                        this, Manifest.permission.ACCESS_FINE_LOCATION
+                        this,
+                        Manifest.permission.ACCESS_FINE_LOCATION
                     ) == PackageManager.PERMISSION_GRANTED
                 ) {
                     mMap.isMyLocationEnabled = true
@@ -119,7 +117,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
     }
-
 
     private fun handleFailure(failure: Failure?) {
         BindingUtil.showSnackBar(binding.root, getString(R.string.error_show_data))

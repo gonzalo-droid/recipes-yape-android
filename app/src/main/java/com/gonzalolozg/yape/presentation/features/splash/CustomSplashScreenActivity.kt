@@ -12,7 +12,6 @@ class CustomSplashScreenActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         val screenSplash = installSplashScreen()
 
         super.onCreate(savedInstanceState)
@@ -25,9 +24,7 @@ class CustomSplashScreenActivity : AppCompatActivity() {
 
         setContentView(view)
 
-
         goToHome()
-
     }
 
     private fun goToHome() {

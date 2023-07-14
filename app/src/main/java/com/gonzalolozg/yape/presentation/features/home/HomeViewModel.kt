@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getRecipesUseCase: GetRecipesUseCase,
+    private val getRecipesUseCase: GetRecipesUseCase
 ) : BaseViewModel() {
 
     private val _recipes: MutableLiveData<List<Recipe>> = MutableLiveData()
@@ -35,5 +35,4 @@ class HomeViewModel @Inject constructor(
     private fun handleRecipeList(recipes: List<Recipe>) {
         _recipes.value = recipes
     }
-
 }

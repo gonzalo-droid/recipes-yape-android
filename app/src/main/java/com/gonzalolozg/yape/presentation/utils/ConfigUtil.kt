@@ -9,7 +9,6 @@ object ConfigUtil {
 
     const val RECIPE_PUT = "recipe"
 
-
     fun hideSoftInput(activity: Activity?) {
         if (activity != null) {
             var view = activity.currentFocus

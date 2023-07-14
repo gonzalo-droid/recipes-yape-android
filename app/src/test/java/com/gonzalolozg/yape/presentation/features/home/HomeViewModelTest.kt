@@ -35,14 +35,25 @@ class HomeViewModelTest {
     fun `loading recipes should update live data`() {
         val recipesList = arrayListOf<Recipe>(
             Recipe(
-                id = 1, name = "Arroz con pato",
-                description = "", instructions = "", ingredients = "",
-                image = "", latitude = "", longitude = "",
+                id = 1,
+                name = "Arroz con pato",
+                description = "",
+                instructions = "",
+                ingredients = "",
+                image = "",
+                latitude = "",
+                longitude = ""
 
-                ), Recipe(
-                id = 2, name = "Chaufa",
-                description = "", instructions = "", ingredients = "",
-                image = "", latitude = "", longitude = "",
+            ),
+            Recipe(
+                id = 2,
+                name = "Chaufa",
+                description = "",
+                instructions = "",
+                ingredients = "",
+                image = "",
+                latitude = "",
+                longitude = ""
             )
         )
 

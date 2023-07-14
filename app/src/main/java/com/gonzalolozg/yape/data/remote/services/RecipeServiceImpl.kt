@@ -11,7 +11,7 @@ import javax.inject.Singleton
 @Singleton
 class RecipeServiceImpl @Inject constructor(
     private val recipeApi: RecipeApi,
-    private val networkHandler: NetworkHandler,
+    private val networkHandler: NetworkHandler
 ) : RecipeService {
 
     override suspend fun recipes(): Either<Failure, ArrayList<Recipe>> {
@@ -19,5 +19,4 @@ class RecipeServiceImpl @Inject constructor(
             recipeApi.recipes()
         }
     }
-
 }

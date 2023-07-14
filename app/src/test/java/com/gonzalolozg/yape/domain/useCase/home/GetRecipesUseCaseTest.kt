@@ -32,11 +32,8 @@ class GetRecipesUseCaseTest {
 
     @Test
     fun `should get data from repository`() {
-
         runBlocking { getRecipesUseCase.run(BaseUseCase.None()) }
 
         coVerify(exactly = 1) { repository.getRecipes() }
     }
-
-
 }

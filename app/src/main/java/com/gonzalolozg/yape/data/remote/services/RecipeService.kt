@@ -7,5 +7,4 @@ import com.gonzalolozg.yape.data.remote.entity.Recipe
 interface RecipeService {
 
     suspend fun recipes(): Either<Failure, ArrayList<Recipe>>
-
 }

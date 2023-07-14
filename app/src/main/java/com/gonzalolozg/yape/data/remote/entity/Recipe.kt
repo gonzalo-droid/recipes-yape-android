@@ -3,7 +3,6 @@ package com.gonzalolozg.yape.data.remote.entity
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-
 data class Recipe(
     @SerializedName("id") val id: Int?,
     @SerializedName("name") val name: String?,
@@ -12,5 +11,5 @@ data class Recipe(
     @SerializedName("ingredients") val ingredients: String?,
     @SerializedName("image") var image: String?,
     @SerializedName("latitude") var latitude: String,
-    @SerializedName("longitude") var longitude: String,
+    @SerializedName("longitude") var longitude: String
 ) : Serializable

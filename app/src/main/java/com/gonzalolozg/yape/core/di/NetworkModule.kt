@@ -35,7 +35,7 @@ object NetworkModule {
     @Singleton
     fun provideRetrofit(
         okHttpClient: OkHttpClient,
-        providesGsonConverterFactory: GsonConverterFactory,
+        providesGsonConverterFactory: GsonConverterFactory
     ): Retrofit {
         return Retrofit.Builder().baseUrl(BuildConfig.BASE_URL).client(okHttpClient)
             .addConverterFactory(providesGsonConverterFactory).build()
@@ -59,7 +59,9 @@ object NetworkModule {
 
         val client = OkHttpClient.Builder().connectTimeout(com.gonzalolozg.yape.core.di.NetworkModule.TIMEOUT, TimeUnit.MINUTES)
             .writeTimeout(com.gonzalolozg.yape.core.di.NetworkModule.TIMEOUT, TimeUnit.MINUTES).readTimeout(
-                com.gonzalolozg.yape.core.di.NetworkModule.TIMEOUT, TimeUnit.MINUTES)
+                com.gonzalolozg.yape.core.di.NetworkModule.TIMEOUT,
+                TimeUnit.MINUTES
+            )
             .addInterceptor(interceptor).addInterceptor { chain ->
                 chain.proceed(chain.request().newBuilder().build())
             }.addInterceptor(authInterceptor)
@@ -79,7 +81,7 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideRecipeApi(
-        retrofit: Retrofit,
+        retrofit: Retrofit
     ): RecipeApi = retrofit.create(RecipeApi::class.java)
 
     @Provides

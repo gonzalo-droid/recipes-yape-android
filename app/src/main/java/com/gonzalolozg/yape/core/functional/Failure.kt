@@ -23,6 +23,4 @@ sealed class Failure {
 
     /** Weird and strange error that we don´t know the cause.*/
     object None : Failure()
-
-
 }

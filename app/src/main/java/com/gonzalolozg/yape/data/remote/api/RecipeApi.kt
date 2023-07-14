@@ -9,5 +9,4 @@ interface RecipeApi {
 
     @GET("recipes")
     suspend fun recipes(): Response<BaseResponse<ArrayList<Recipe>>>
-
 }

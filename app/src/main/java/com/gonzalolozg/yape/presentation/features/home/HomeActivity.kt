@@ -30,7 +30,6 @@ class HomeActivity : AppCompatActivity() {
     private var listRecipesFiler: List<Recipe> = arrayListOf()
     private lateinit var adapter: HomeRecipeAdapter
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -41,7 +40,6 @@ class HomeActivity : AppCompatActivity() {
         setContentView(view)
 
         viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
-
 
         recipeRecycler = binding.recipeRecycler
 
@@ -58,7 +56,7 @@ class HomeActivity : AppCompatActivity() {
 
         viewModel.loadRecipes()
 
-        binding.textSearch.addTextChangedListener {filter ->
+        binding.textSearch.addTextChangedListener { filter ->
             viewModel.setQueryHintSearch(filter.toString())
             var text = viewModel.queryHintSearch.value
             validQuerySearch(text)
@@ -80,12 +78,11 @@ class HomeActivity : AppCompatActivity() {
             }
             adapter.updateData(filterList)
 
-            if(filterList.isEmpty()){
+            if (filterList.isEmpty()) {
                 binding.noDataInclude.root.visible()
             } else {
                 binding.noDataInclude.root.invisible()
             }
-
         } else {
             binding.noDataInclude.root.invisible()
             viewModel.loadRecipes()
@@ -108,9 +105,11 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun onItemSelected(model: Recipe) {
-        startActivity(Intent(this, DetailActivity::class.java).apply {
-            putExtra(ConfigUtil.RECIPE_PUT, model)
-        })
+        startActivity(
+            Intent(this, DetailActivity::class.java).apply {
+                putExtra(ConfigUtil.RECIPE_PUT, model)
+            }
+        )
     }
 
     private fun handleFailure(failure: Failure?) {
@@ -123,7 +122,6 @@ class HomeActivity : AppCompatActivity() {
 
     private fun showProgress() {
         binding.skeletonInclude.root.visibility = View.VISIBLE
-
     }
 
     private fun hideProgress() {

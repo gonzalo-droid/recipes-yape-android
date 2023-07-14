@@ -11,10 +11,9 @@ import com.gonzalolozg.yape.data.remote.entity.Recipe
 import com.gonzalolozg.yape.databinding.ItemRecipeBinding
 import com.gonzalolozg.yape.presentation.utils.imageLoader.ImageLoaderGlide
 
-
 class HomeRecipeAdapter constructor(
     private var recipes: List<Recipe> = arrayListOf(),
-    private val onClickListener: (Recipe) -> Unit,
+    private val onClickListener: (Recipe) -> Unit
 ) : RecyclerView.Adapter<HomeRecipeAdapter.CustomViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
@@ -39,7 +38,6 @@ class HomeRecipeAdapter constructor(
         private val binding = ItemRecipeBinding.bind(view)
 
         fun bind(model: Recipe, onClickListener: (Recipe) -> Unit) {
-
             binding.titleTv.text = model.name
             binding.descriptionTv.text = model.description
 

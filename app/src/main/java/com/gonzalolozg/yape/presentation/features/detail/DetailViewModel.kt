@@ -13,12 +13,11 @@ class DetailViewModel @Inject constructor() : BaseViewModel() {
     private val _detailRecipe: MutableLiveData<Recipe> = MutableLiveData()
     val detailRecipe: LiveData<Recipe> = _detailRecipe
 
-    fun setData(model: Recipe){
+    fun setData(model: Recipe) {
         _detailRecipe.postValue(model)
     }
 
     fun getData(): Recipe? {
         return detailRecipe.value
     }
-
 }

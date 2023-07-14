@@ -33,7 +33,8 @@ class NetworkHandler
                         } else {
                             return@withContext Either.Left(
                                 getErrorMessageFromServer(
-                                    response.code(), response.errorBody()?.string()
+                                    response.code(),
+                                    response.errorBody()?.string()
                                 )
                             )
                         }

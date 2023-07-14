@@ -12,7 +12,7 @@ class BindingUtil {
         fun showSnackBar(
             rootView: View,
             contentText: String?,
-            duration: Int = Snackbar.LENGTH_LONG,
+            duration: Int = Snackbar.LENGTH_LONG
         ) {
             Snackbar.make(
                 rootView,
@@ -42,7 +42,6 @@ class BindingUtil {
                 is Failure.ServerBodyError -> {
                     MessageDesign.Builder().idMessage(R.string.error_user_message).build()
                 }
-
 
                 is Failure.DefaultError -> {
                     MessageDesign.Builder().messageString(failure.message).build()
