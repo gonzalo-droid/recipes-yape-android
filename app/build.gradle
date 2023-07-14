@@ -12,13 +12,22 @@ android {
     flavorDimensions 'versionFlavor'
 
 
+    signingConfigs {
+        release {
+            storeFile file("keystore/release.jks")
+            storePassword "(twd98123321)"
+            keyAlias "yapeRecipesKey"
+            keyPassword "(twd98123321)"
+        }
+    }
+
     defaultConfig {
         applicationId "com.gonzalolozg.yape"
         minSdk 24
         targetSdk 33
         versionCode 1
         versionName "1.0.0"
-
+        signingConfig signingConfigs.release
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
