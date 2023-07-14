@@ -4,7 +4,7 @@ sealed class Failure {
     /** When service return 401 or 403 this will force the client to log out of the app.*/
     open class UnauthorizedOrForbidden(val message: String) : Failure()
 
-    open class DefaultError(val idMessage: Int) : Failure()
+    open class DefaultError(val message: String) : Failure()
 
     /** When suddenly the connection is lost.*/
     object NetworkConnectionLostSuddenly : Failure()

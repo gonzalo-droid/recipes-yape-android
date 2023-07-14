@@ -45,7 +45,7 @@ class BindingUtil {
 
 
                 is Failure.DefaultError -> {
-                    MessageDesign.Builder().idMessage(failure.idMessage).build()
+                    MessageDesign.Builder().messageString(failure.message).build()
                 }
 
                 else -> {
