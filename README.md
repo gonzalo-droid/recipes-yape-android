@@ -17,6 +17,8 @@ presentar un proyecto escalable, mantenible y testeable.
 
 Tambien utilice Material Design 3, Kotlin Coroutines, Hilt.
 
+Puedes instalar y testear la última <a href="https://github.com/gonzalo-droid/recipes-yape-android/blob/main/docs/release/app-prod-release.apk">APK</a>.
+
 - Formato de commits:
     - [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/)
 
