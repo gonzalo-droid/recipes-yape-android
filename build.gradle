@@ -63,20 +63,6 @@ buildscript {
 
         maps = [maps: "com.google.android.gms:play-services-maps:$versions.maps",]
 
-        navigation = [
-                //NAVIGATION
-                navigationUi      : "androidx.navigation:navigation-ui-ktx:$versions.navigation",
-                navigationFragment: "androidx.navigation:navigation-fragment-ktx:$versions.navigation",
-
-                navigationSupport : "androidx.navigation:navigation-dynamic-features-fragment:$versions.navigation",
-
-                navigationTest    : "androidx.navigation:navigation-testing::$versions.navigation",]
-
-        daggerHilt = [hilt                  : "com.google.dagger:hilt-android:$versions.hilt",
-                      compiler              : "com.google.dagger:hilt-android-compiler:$versions.hilt",
-                      annotationProcessor   : "androidx.hilt:hilt-compiler:$versions.hiltAnotationProcesor",
-                      hiltLifecycleViewmodel: "androidx.hilt:hilt-lifecycle-viewmodel:$versions.hiltLifecycleViewmodel",]
-
         retrofit = [
                 //RETROFIT
                 retrofit         : "com.squareup.retrofit2:retrofit:$versions.retrofit",
@@ -84,8 +70,7 @@ buildscript {
                 gson             : "com.google.code.gson:gson:$versions.gson",
                 okhttpInterceptor: "com.squareup.okhttp3:logging-interceptor:$versions.okhttpInterceptor",]
 
-        others = [glide  : "com.github.bumptech.glide:glide:$versions.glide",
-                  pinview: "io.github.chaosleung:pinview:$versions.pinview"]
+        others = [glide  : "com.github.bumptech.glide:glide:$versions.glide"]
         agp_version = '8.0.0'
 
     }

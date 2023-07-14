@@ -4,7 +4,7 @@
     <string name="app_name">Recipes</string>
 
     <string name="error_user_message">Error, inténtelo nuevamente</string>
-
+    <string name="error_location">Tuvimos problemas al cargar la ubicación, intente más tarde</string>
     <string name="error_credentials">Credenciales incorrectas</string>
     <string name="error_show_data">Tuvimos problemas al mostrar la información</string>
 

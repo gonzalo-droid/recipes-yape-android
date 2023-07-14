@@ -11,4 +11,6 @@ data class Recipe(
     @SerializedName("instructions") val instructions: String?,
     @SerializedName("ingredients") val ingredients: String?,
     @SerializedName("image") var image: String?,
+    @SerializedName("latitude") var latitude: String,
+    @SerializedName("longitude") var longitude: String,
 ) : Serializable

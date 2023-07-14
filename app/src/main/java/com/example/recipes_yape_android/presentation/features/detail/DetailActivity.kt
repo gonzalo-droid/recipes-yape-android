@@ -1,14 +1,17 @@
 package com.example.recipes_yape_android.presentation.features.detail
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.request.RequestOptions
 import com.example.recipes_yape_android.R
+import com.example.recipes_yape_android.core.extensions.Mode
 import com.example.recipes_yape_android.core.extensions.failure
 import com.example.recipes_yape_android.core.extensions.observe
+import com.example.recipes_yape_android.core.extensions.setColorFilterV2
 import com.example.recipes_yape_android.core.functional.Failure
 import com.example.recipes_yape_android.data.remote.entity.Recipe
 import com.example.recipes_yape_android.databinding.ActivityDetailBinding
@@ -39,6 +42,8 @@ class DetailActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         val upArrow = resources.getDrawable(R.drawable.ic_arrow_back)
+        upArrow.setColorFilterV2(R.color.blue, Mode.SRC_ATOP)
+
 
         supportActionBar!!.setHomeAsUpIndicator(upArrow)
 

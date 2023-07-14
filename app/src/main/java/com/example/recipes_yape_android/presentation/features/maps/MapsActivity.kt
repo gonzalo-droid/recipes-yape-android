@@ -68,14 +68,20 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap?.let { it ->
             if (viewModel.getData() != null) {
                 binding.topBarInclude.title = recipe?.name
-                val location = LatLng(-34.0, 151.0)
-                it.addMarker(MarkerOptions().position(location).title(recipe?.name))
-                it.moveCamera(CameraUpdateFactory.newLatLng(location))
 
-                val zoomLevel = 15f
-                val cameraUpdate = CameraUpdateFactory.newLatLngZoom(location, zoomLevel)
-                it.moveCamera(cameraUpdate)
-                it.animateCamera(cameraUpdate)
+                if(recipe?.latitude != null && recipe?.longitude != null){
+                    val location = LatLng(recipe?.latitude!!.toDouble(), recipe.longitude.toDouble())
+                    it.addMarker(MarkerOptions().position(location).title(recipe?.name))
+                    it.moveCamera(CameraUpdateFactory.newLatLng(location))
+
+                    val zoomLevel = 10f
+                    val cameraUpdate = CameraUpdateFactory.newLatLngZoom(location, zoomLevel)
+                    it.moveCamera(cameraUpdate)
+                    it.animateCamera(cameraUpdate)
+                } else {
+                    BindingUtil.showSnackBar(binding.root, getString(R.string.error_location))
+                }
+
             }
         }
     }
